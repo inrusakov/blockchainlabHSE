@@ -4,9 +4,13 @@ Network: Sepolia
 ID транзакции: 0xf2584615499e3b06188cb5702b133f55a764bfc2b11d5fc28d466efbda05d78c
 
 Address deploying the contract --> 0xb3389d620d258d1bd0Cffbd1CdD237c152218ec5
+
 Простой контракт из гайда.
+
 Token contract address --> 0x8aA01E2c0EaBF586b20129789F1b279F2b98fC44
+
 Контракт с функциями чеканки.
+
 Token contract address --> 0xc65dbCaD7140bE72821158D7f2d5FB19749a0bE1
 
 
