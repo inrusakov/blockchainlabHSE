@@ -3,9 +3,6 @@ pragma solidity >=0.8.0 <0.9.0;
 
 import "hardhat/console.sol";
 
-/**
- * @title Token - a simple example (non - ERC-20 compliant) token contract.
- */
 contract Token {
     address private owner; // slot 0
 
