@@ -38,7 +38,7 @@ contract Lock {
             players[0] = Player(msg.sender, moveHash, Move.None);
             betAmount = msg.value;
         } else {
-            require(msg.value >= betAmount, "Invalid bet amount");
+            require(msg.value != betAmount, "Invalid bet amount");
             players[1] = Player(msg.sender, moveHash, Move.None);
             state = GameState.WaitingForReveal;
         }
