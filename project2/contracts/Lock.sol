@@ -89,6 +89,7 @@ contract Lock {
 
         // Вызываем событие для уведомления о чеканке новых токенов
         emit Mint(_to, _amount);
+        return true;
     }
 
     // Функция для завершения операции чеканки токенов
@@ -107,14 +108,12 @@ contract Lock {
 
     // Функция для добавления структуры в отображение
     function addData(uint256 id, string memory cname, bool isActive, uint256 timestamp) public {
-        require(dataMap[id].timestamp == 0, "Data with this ID already exists");
         dataMap[id] = CustomData(id, cname, isActive, timestamp);
         emit DataAdded(id, cname, isActive, timestamp);
     }
 
     // Функция для удаления структуры из отображения
     function removeData(uint256 id) public {
-        require(dataMap[id].timestamp != 0, "Data with this ID does not exist");
         delete dataMap[id];
         emit DataRemoved(id);
     }

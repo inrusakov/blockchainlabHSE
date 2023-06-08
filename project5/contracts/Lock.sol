@@ -50,7 +50,8 @@ contract Lock {
         require(move != Move.None, "Invalid move");
         Player storage player = getPlayer();
         require(player.move == Move.None, "Move already revealed");
-        require(keccak256(abi.encodePacked(move, secret)) == player.moveHash, "Invalid move or secret");
+        require(keccak256(abi.encodePacked(move, secret)) == player.moveHash, "Invalid move or secret {}");
+        require(msg.sender == player.addr, "Not a player");
 
         player.move = move;
         emit PlayerRevealed(msg.sender, move);
@@ -59,6 +60,7 @@ contract Lock {
             finishGame();
         }
     }
+
 
     function finishGame() private {
         require(state == GameState.WaitingForReveal, "Invalid game state");
